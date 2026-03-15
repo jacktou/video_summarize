@@ -1,5 +1,5 @@
 ---
-name: video-summarize
+name: video_summarize
 description: >
   Summarizes video content from a URL or app share text.
   Use when the user sends a video link or share message from Douyin, Bilibili, YouTube, TikTok, Xiaohongshu, Twitter/X, or other platforms.
