@@ -20,7 +20,7 @@ metadata:
       - darwin
     install:
       - type: node
-        command: "pip install -r requirements.txt"
+        command: "cd {{SKILL_DIR}} && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt"
 ---
 
 # Video Summarizer
@@ -34,12 +34,22 @@ Activate this skill when the user:
 - Pastes app share text containing a video link (e.g. Douyin "复制打开抖音…https://v.douyin.com/xxx/")
 - Asks to summarize, analyze, or explain a video
 
+## Setup (first time only)
+
+```bash
+cd {{SKILL_DIR}}
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
 ## How to run
 
 ```bash
 cd {{SKILL_DIR}}
-python3 main.py "<user_input>"
+.venv/bin/python3 main.py "<user_input>"
 ```
+
+If `.venv` does not exist, run the Setup step first.
 
 Pass the user's **original message** as the argument — the script auto-extracts URLs from share text.
 
